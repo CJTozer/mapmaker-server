@@ -1,0 +1,19 @@
+{
+  "name": "map-maker-server",
+  "version": "0.0.1",
+  "description": "Simple web server for turning map-maker specfiles into SVG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CJTozer/mapmaker-server.git"
+  },
+  "author": "Chris Tozer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CJTozer/mapmaker-server/issues"
+  },
+  "homepage": "https://github.com/CJTozer/mapmaker-server#readme"
+}
