@@ -2,3 +2,5 @@
 /build
 /output
 /node_modules
+
+npm-debug.log
