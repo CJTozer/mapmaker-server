@@ -4,6 +4,7 @@
 
 const chalk = require("chalk");
 const http = require('http');
+const MapMaker = require('map-maker');
 
 // Port - @@@ Don't override if provided by ENV.
 const PORT=5000;
@@ -30,4 +31,5 @@ function handleRequest(request, response){
 // Create and start a server.
 http.createServer(handleRequest).listen(PORT, function(){
   console.log(chalk.bold.green(`mapmaker-server listening on port ${PORT}`));
+  MapMaker.test();
 });
