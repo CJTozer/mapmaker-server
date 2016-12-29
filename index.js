@@ -15,7 +15,7 @@ function handleRequest(request, response){
     case "POST":
       request.on('data', (chunk) => {
         console.log(`Received data: ${chunk}`);
-        var mm = new MapMaker()
+        new MapMaker()
           .spec(JSON.parse(chunk))
           .onError((err) => {
             console.log(chalk.bold.red(err));
@@ -24,8 +24,8 @@ function handleRequest(request, response){
           })
           .onSuccess((data) => {
             response.end(data);
-          });
-        mm.build_map();
+          })
+          .build_map();
       });
       break;
     default:
