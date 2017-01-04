@@ -4,7 +4,8 @@
   "description": "Simple web server for turning map-maker specfiles into SVG",
   "main": "index.js",
   "scripts": {
-    "preversion": "jshint index.js",
+    "preversion": "grunt lint",
+    "version": "git add -u",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -25,6 +26,15 @@
     "map-maker": "^0.2.3-1"
   },
   "devDependencies": {
-    "jshint": "^2.9.4"
+    "eslint": "^3.12.2",
+    "eslint-config-idiomatic": "^2.1.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-esdoc": "0.0.4",
+    "grunt-jsonlint": "^1.1.0",
+    "gruntify-eslint": "^3.1.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
   }
 }
