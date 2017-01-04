@@ -24,7 +24,10 @@ module.exports = function( grunt ) {
     },
     jsonlint: {
       files: {
-        src: [ 'package.json' ],
+        src: [
+          'package.json',
+          '.jshintrc',
+        ],
       },
     },
     watch: {
