@@ -5,8 +5,7 @@ const
   chalk = require( 'chalk' ),
   http = require( 'http' ),
   MapMaker = require( 'map-maker' ),
-  // Port - @@@ Don't override if provided by ENV.
-  PORT = 5000;
+  PORT = process.env.PORT || 5000;
 
 //We need a function which handles requests and send response
 function handleRequest( request, response ) {
@@ -39,6 +38,6 @@ function handleRequest( request, response ) {
 // Create and start a server.
 http.createServer( handleRequest ).listen( PORT, function() {
   // @@@ For now always use debug logging...
-  process.env.debug = true;
+  process.env.DEBUG = true;
   console.log( chalk.bold.green( `mapmaker-server listening on port ${PORT}` ) );
 } );
