@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-'use strict';
 
-const
-  chalk = require( 'chalk' ),
-  http = require( 'http' ),
-  MapMaker = require( 'map-maker' ),
-  PORT = process.env.PORT || 5000;
+const chalk = require( 'chalk' );
+const http = require( 'http' );
+const MapMaker = require( 'map-maker' );
 
-//We need a function which handles requests and send response
+const PORT = process.env.PORT || 5000;
+
+// We need a function which handles requests and send response
 function handleRequest( request, response ) {
   switch ( request.method ) {
   case 'POST':
@@ -36,7 +35,7 @@ function handleRequest( request, response ) {
 }
 
 // Create and start a server.
-http.createServer( handleRequest ).listen( PORT, function() {
+http.createServer( handleRequest ).listen( PORT, () => {
   // @@@ For now always use debug logging...
   process.env.LOG_LEVEL = 10;
   console.log( chalk.bold.green( `mapmaker-server listening on port ${PORT}` ) );
