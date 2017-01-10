@@ -38,6 +38,6 @@ function handleRequest( request, response ) {
 // Create and start a server.
 http.createServer( handleRequest ).listen( PORT, function() {
   // @@@ For now always use debug logging...
-  process.env.DEBUG = true;
+  process.env.LOG_LEVEL = 10;
   console.log( chalk.bold.green( `mapmaker-server listening on port ${PORT}` ) );
 } );
