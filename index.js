@@ -12,17 +12,23 @@ function handleRequest( request, response ) {
   case 'POST':
     request.on( 'data', ( chunk ) => {
       console.log( `Received data: ${chunk}` );
-      new MapMaker()
-          .spec( JSON.parse( chunk ) )
-          .onError( ( err ) => {
-            console.log( chalk.bold.red( err ) );
-            response.statusCode = 404;
-            response.end( err );
-          } )
-          .onSuccess( ( data ) => {
-            response.end( data );
-          } )
-          .build_map();
+      try {
+        new MapMaker()
+        .spec( JSON.parse( chunk ) )
+        .onError( ( err ) => {
+          console.log( chalk.bold.red( err ) );
+          response.statusCode = 400;
+          response.end( '' + err );
+        } )
+        .onSuccess( ( data ) => {
+          response.end( data );
+        } )
+        .build_map();
+      } catch ( e ) {
+        console.log( chalk.bold.red( e ) );
+        response.statusCode = 400;
+        response.end( '' + e );
+      }
     } );
     break;
   default:
